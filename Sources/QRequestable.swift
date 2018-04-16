@@ -58,15 +58,3 @@ extension Dictionary where Key == String {
         }
     }
 }
-
-extension Decodable {
-    init(decode data: Data, decoder: JSONDecoder = JSONDecoder() ) throws {
-        self = try decoder.decode(Self.self, from: data)
-    }
-}
-
-extension Encodable {
-    func encode(encoder: JSONEncoder = JSONEncoder()) throws -> Data {
-        return try encoder.encode(self)
-    }
-}
