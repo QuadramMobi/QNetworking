@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02D8E43C20849E1D00FD11D5 /* QResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D8E43B20849E1D00FD11D5 /* QResponse.swift */; };
 		02DCB43B207E28A50012CE23 /* QNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 02DCB439207E28A50012CE23 /* QNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02DCB442207E292B0012CE23 /* QRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DCB441207E292B0012CE23 /* QRequestable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02D8E43B20849E1D00FD11D5 /* QResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QResponse.swift; sourceTree = "<group>"; };
 		02DCB436207E28A40012CE23 /* QNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02DCB439207E28A50012CE23 /* QNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNetworking.h; sourceTree = "<group>"; };
 		02DCB43A207E28A50012CE23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02DCB441207E292B0012CE23 /* QRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRequestable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,7 +34,7 @@
 		02DCB42C207E28A40012CE23 = {
 			isa = PBXGroup;
 			children = (
-				02DCB438207E28A50012CE23 /* QNetworking */,
+				02DCB438207E28A50012CE23 /* Sources */,
 				02DCB437207E28A40012CE23 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,13 +47,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		02DCB438207E28A50012CE23 /* QNetworking */ = {
+		02DCB438207E28A50012CE23 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				02DCB441207E292B0012CE23 /* QRequestable.swift */,
 				02DCB439207E28A50012CE23 /* QNetworking.h */,
 				02DCB43A207E28A50012CE23 /* Info.plist */,
+				02D8E43B20849E1D00FD11D5 /* QResponse.swift */,
 			);
-			path = QNetworking;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +101,7 @@
 				TargetAttributes = {
 					02DCB435207E28A40012CE23 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -130,6 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02D8E43C20849E1D00FD11D5 /* QResponse.swift in Sources */,
+				02DCB442207E292B0012CE23 /* QRequestable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +268,7 @@
 		02DCB43F207E28A50012CE23 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -266,7 +276,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = QNetworking/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -276,6 +286,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.quadram.QNetworking;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +295,7 @@
 		02DCB440207E28A50012CE23 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -291,7 +303,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = QNetworking/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
