@@ -45,7 +45,9 @@ extension Dictionary where Key == String {
     var queryString: String {
         return "?" + self.map{
             return queryKV(key: $0.key, value: $0.value)
-            }.joined(separator: "&")
+            }
+            .joined(separator: "&")
+            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
     }
     
     private func queryKV(key: String, value: Any) -> String {
