@@ -13,6 +13,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		028E502520B56D42000ECFC5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		02D8E43B20849E1D00FD11D5 /* QResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QResponse.swift; sourceTree = "<group>"; };
 		02DCB436207E28A40012CE23 /* QNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02DCB439207E28A50012CE23 /* QNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNetworking.h; sourceTree = "<group>"; };
@@ -34,6 +35,7 @@
 		02DCB42C207E28A40012CE23 = {
 			isa = PBXGroup;
 			children = (
+				028E502520B56D42000ECFC5 /* README.md */,
 				02DCB438207E28A50012CE23 /* Sources */,
 				02DCB437207E28A40012CE23 /* Products */,
 			);
