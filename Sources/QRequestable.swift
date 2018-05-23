@@ -39,6 +39,40 @@ public extension QRequestable {
         req.httpBody = body
         return req
     }
+    
+    func printCURL() -> Self {
+        print(self.cURL)
+        return self
+    }
+    
+    var cURL: String {
+        let req = request()
+        guard let url = req.url else { return "" }
+        var baseCommand = "curl \(url.absoluteString)"
+        
+        if req.httpMethod == "HEAD" {
+            baseCommand += " --head"
+        }
+        
+        var command = [baseCommand]
+        
+        if let method = req.httpMethod, method != "GET" && method != "HEAD" {
+            command.append("-X \(method)")
+        }
+        
+        if let headers = req.allHTTPHeaderFields {
+            for (key, value) in headers where key != "Cookie" {
+                command.append("-H '\(key): \(value)'")
+            }
+        }
+        
+        if let data = req.httpBody, let body = String(data: data, encoding: .utf8) {
+            command.append("-d '\(body)'")
+        }
+        
+        return command.joined(separator: " \\\n\t")
+    }
+    
 }
 
 extension Dictionary where Key == String {
