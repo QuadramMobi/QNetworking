@@ -10,6 +10,7 @@
 		02D8E43C20849E1D00FD11D5 /* QResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D8E43B20849E1D00FD11D5 /* QResponse.swift */; };
 		02DCB43B207E28A50012CE23 /* QNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 02DCB439207E28A50012CE23 /* QNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02DCB442207E292B0012CE23 /* QRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DCB441207E292B0012CE23 /* QRequestable.swift */; };
+		02FA5B6B20B713C700B4574A /* FormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FA5B6A20B713C700B4574A /* FormData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		02DCB439207E28A50012CE23 /* QNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNetworking.h; sourceTree = "<group>"; };
 		02DCB43A207E28A50012CE23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02DCB441207E292B0012CE23 /* QRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRequestable.swift; sourceTree = "<group>"; };
+		02FA5B6A20B713C700B4574A /* FormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				02DCB439207E28A50012CE23 /* QNetworking.h */,
 				02DCB43A207E28A50012CE23 /* Info.plist */,
 				02D8E43B20849E1D00FD11D5 /* QResponse.swift */,
+				02FA5B6A20B713C700B4574A /* FormData.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			files = (
 				02D8E43C20849E1D00FD11D5 /* QResponse.swift in Sources */,
 				02DCB442207E292B0012CE23 /* QRequestable.swift in Sources */,
+				02FA5B6B20B713C700B4574A /* FormData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
