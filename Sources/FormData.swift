@@ -16,6 +16,11 @@ public struct FormField: Formable {
     let name: String
     let value: String
     
+    public init(name: String, value: String) {
+        self.name = name
+        self.value = value
+    }
+    
     public func formString() -> Data {
         var body = ""
         body += "Content-Disposition:form-data; name=\"\(name)\""
@@ -30,6 +35,13 @@ public struct FormFile: Formable {
     let type: String
     let fileName: String
     
+    public init(name: String, data: Data, type: String, fileName: String){
+        self.name = name
+        self.data = data
+        self.type = type
+        self.fileName = fileName
+    }
+    
     public func formString() -> Data {
         var body = ""
         body += "Content-Disposition:form-data; name=\"\(name)\""
@@ -40,7 +52,7 @@ public struct FormFile: Formable {
 }
 
 public class FormData {
-    class func create(boundary: String, params: [Formable]) -> Data {
+    public class func create(boundary: String, params: [Formable]) -> Data {
         return params.reduce(Data()) {
             $0 + "--\(boundary)\r\n".data(using: .utf8)! + $1.formString()
         } + "--\(boundary)--\r\n".data(using: .utf8)!
