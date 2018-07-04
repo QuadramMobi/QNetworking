@@ -20,7 +20,7 @@ public enum ResponseError: LocalizedError {
 
 public struct QResponse<T: Decodable>: Decodable {
     public var status: Int? // Se esta pensando en no devolver statusCode por JSON sino por cabecera
-    public let message: String
+    public let message: String?
     public let data: T! //Un QResponse puede ser correcto e igual devolver null por 'data'
     public let paginator: Paginator?
 }
