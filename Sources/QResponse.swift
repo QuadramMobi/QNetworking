@@ -19,19 +19,19 @@ public enum ResponseError: LocalizedError {
 }
 
 public struct QResponse<T: Decodable>: Decodable {
-    let status: Int? // Se esta pensando en no devolver statusCode por JSON sino por cabecera
-    let message: String
-    let data: T! //Un QResponse puede ser correcto e igual devolver null por 'data'
-    let paginator: Paginator?
+    public var status: Int? // Se esta pensando en no devolver statusCode por JSON sino por cabecera
+    public let message: String
+    public let data: T! //Un QResponse puede ser correcto e igual devolver null por 'data'
+    public let paginator: Paginator?
 }
 
 struct QResponseError: Codable {
-    let code: Int
-    let message: String
+    public let code: Int
+    public let message: String
 }
 
 public struct Paginator: Decodable {
     //    let previous: Int?
     //    let current: Int
-    let next: Int!
+    public let next: Int!
 }
