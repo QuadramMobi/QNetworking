@@ -16,25 +16,24 @@ public enum QHTTPMethod: String {
 }
 
 public protocol QRequestable {
-    var url: String { get }
+    var baseURL: String { get }
     var path: String { get }
+    var query: [String: Any]? { get }
     var method: QHTTPMethod { get }
     var body: Data? { get }
     var headers: [String: String]? { get }
-    var query: [String: Any]? { get }
     func request() -> URLRequest
 }
 
 public extension QRequestable {
     
     func request() -> URLRequest {
-        let urlStr = url + path + (query?.queryString ?? "")
-        var req = URLRequest(url: URL(string: urlStr)!)
+        var comps = URLComponents(string: baseURL)!
+        comps.path = path
+        comps.queryItems = query?.queryItems
         
-        headers?.forEach {
-            req.addValue($0.value, forHTTPHeaderField: $0.key)
-        }
-        
+        var req = URLRequest(url: comps.url!)
+        req.allHTTPHeaderFields = headers
         req.httpMethod = method.rawValue
         req.httpBody = body
         return req
@@ -75,22 +74,17 @@ public extension QRequestable {
     
 }
 
-extension Dictionary where Key == String {
-    var queryString: String {
-        return "?" + self.map{
-            return queryKV(key: $0.key, value: $0.value)
-            }
-            .joined(separator: "&")
-            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+public extension Dictionary where Key == String {
+    
+    var queryItems: [URLQueryItem] {
+        return self.flatMap { recQuery(key: $0.key, value: $0.value) }
     }
     
-    private func queryKV(key: String, value: Any) -> String {
+    private func recQuery(key: String, value: Any) -> [URLQueryItem] {
         if let v = value as? [Any] {
-            return v.map{
-                queryKV(key: key + "[]", value: $0)
-                }.joined(separator: "&")
+            return v.flatMap{ recQuery(key: key + "[]", value: $0) }
         } else {
-            return key + "=" + (value as AnyObject).description
+            return [URLQueryItem(name: key, value: (value as? AnyObject)?.description)]
         }
     }
 }
