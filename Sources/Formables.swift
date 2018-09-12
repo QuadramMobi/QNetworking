@@ -50,11 +50,3 @@ public struct FormFile: Formable {
         return body.data(using: .utf8)! + data + "\r\n".data(using: .utf8)!
     }
 }
-
-public class FormData {
-    public class func create(boundary: String, params: [Formable]) -> Data {
-        return params.reduce(Data()) {
-            $0 + "--\(boundary)\r\n".data(using: .utf8)! + $1.formString()
-        } + "--\(boundary)--\r\n".data(using: .utf8)!
-    }
-}
