@@ -51,7 +51,7 @@ enum API {
 }
 
 extension API: QRequestable {
-    \* Conform to QRequestable */
+    /* Conform to QRequestable */
 }
 ```
 Use it for your `URLSession`
