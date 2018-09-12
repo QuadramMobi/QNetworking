@@ -1,4 +1,4 @@
-#QNetworking
+# QNetworking
 
 ## Installation
 ```ruby
@@ -59,5 +59,10 @@ Use it for your `URLSession`
 ```
 let dataTask = URLSession.shared.dataTask(with: API.pub(id: 3).request)
 ```
+
+## Examples  
+
+You can see CNMV for a simple example and Tappear for more advanced use.
+
 
 
