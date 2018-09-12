@@ -84,7 +84,7 @@ public extension Dictionary where Key == String {
         if let v = value as? [Any] {
             return v.flatMap{ recQuery(key: key + "[]", value: $0) }
         } else {
-            return [URLQueryItem(name: key, value: (value as? AnyObject)?.description)]
+            return [URLQueryItem(name: key, value: (value as AnyObject).description)]
         }
     }
 }
