@@ -31,7 +31,9 @@ struct QResponseError: Codable {
 }
 
 public struct Paginator: Decodable {
-    //    let previous: Int?
-    //    let current: Int
+    public let prev: Int?
     public let next: Int!
+    public let current: Int?
+    public let total: Int?
+    public let limit: Int?
 }
