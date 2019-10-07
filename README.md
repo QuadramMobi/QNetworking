@@ -2,7 +2,7 @@
 
 ## Installation
 ```ruby
-pod 'QNetworking', :git => 'https://bitbucket.org/qios/qnetworking.git'
+pod 'QNetworking'
 ```
 
 ## FormDataEncoder
@@ -61,8 +61,5 @@ let dataTask = URLSession.shared.dataTask(with: API.pub(id: 3).request)
 ```
 
 ## Examples  
-
-You can see CNMV for a simple example and Tappear for more advanced use.
-
 
 
