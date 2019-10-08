@@ -1,5 +1,7 @@
 # QNetworking
 
+[![badge-pod][]][cocoapods] ![badge-languages][] ![badge-pms][] ![badge-platforms][]
+
 ## Installation
 ```ruby
 pod 'QNetworking'
