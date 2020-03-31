@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'QNetworking'
-  s.version          = '1.1.3'
+  s.version          = '1.1.4'
   s.license          = 'MIT'
   s.summary          = 'Quadram QNetworking Utils'
   s.homepage         = 'https://www.quadram.mobi'
