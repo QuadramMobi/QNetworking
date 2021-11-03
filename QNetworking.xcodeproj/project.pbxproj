@@ -23,6 +23,7 @@
 		02DCB441207E292B0012CE23 /* QRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRequestable.swift; sourceTree = "<group>"; };
 		02F3466D21492DBE00507051 /* FormDataEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDataEncoder.swift; sourceTree = "<group>"; };
 		02FA5B6A20B713C700B4574A /* Formables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formables.swift; sourceTree = "<group>"; };
+		CBF9EE8A27333D9100FDE1D0 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +40,7 @@
 		02DCB42C207E28A40012CE23 = {
 			isa = PBXGroup;
 			children = (
+				CBF9EE8A27333D9100FDE1D0 /* Package.swift */,
 				028E502520B56D42000ECFC5 /* README.md */,
 				02DCB438207E28A50012CE23 /* Sources */,
 				02DCB437207E28A40012CE23 /* Products */,
