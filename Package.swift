@@ -7,9 +7,6 @@ let package = Package(
     products: [
         .library(name: "QNetworking",  targets: ["QNetworking"])
     ],
-    dependencies: [
-        .package(url: "https://github.com/mxcl/PromiseKit", from: "6.8.0")
-    ],
     targets: [
         .target(name: "QNetworking", path: "Sources")
     ]

@@ -24,7 +24,7 @@ public struct FormField: Formable {
     public func formString() -> Data {
         var body = ""
         body += "Content-Disposition:form-data; name=\"\(name)\""
-        body += "\r\n\r\n\(value)\n"
+        body += "\r\n\r\n\(value)\r\n"
         return body.data(using: .utf8)!
     }
 }
